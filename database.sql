@@ -85,7 +85,16 @@ CREATE TABLE `profile`.`register` (
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
+#create table userprofile to store profile of all the students
 
+CREATE TABLE `profile`.`userprofile` (
+  `id` INT(5) NOT NULL AUTO_INCREMENT ,
+  `username` VARCHAR(255) NOT NULL ,
+  `intro` VARCHAR(255) NOT NULL ,
+  `skills` VARCHAR(255) NOT NULL ,
+  `image` VARCHAR(255) NOT NULL ,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
 
 
 
