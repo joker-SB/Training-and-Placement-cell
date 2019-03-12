@@ -61,3 +61,20 @@ CREATE TABLE `id8954325_profile`.`recruiter` (
 ) ENGINE = InnoDB;
 
 
+
+#create table named as recruiterprofile  to store the profile of recruiters so that when a recruiter login with his
+userid and password we can display his profile also on the home page
+
+CREATE TABLE `id8954325_profile`.`recruiterprofile` (
+  `id` INT(5) NOT NULL AUTO_INCREMENT ,
+  `username` VARCHAR(255) NOT NULL ,
+  `companyname` VARCHAR(255) NOT NULL ,
+  `contactnumber` VARCHAR(13) NOT NULL ,
+  `image` VARCHAR(255) NOT NULL ,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+
+
+
+
