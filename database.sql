@@ -33,3 +33,22 @@ CREATE TABLE `profile`.`poregister`(
   `password` VARCHAR(32) NOT NULL , 
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+
+#create table post to store all the post posted by students and placement officers,but we retrive the as
+a seperate post using some logics in sql code
+
+CREATE TABLE `profile`.`post`( 
+  `id` INT(5) NOT NULL AUTO_INCREMENT ,
+  `username` VARCHAR(255) NOT NULL ,
+  `category` VARCHAR(255) NOT NULL ,
+  `title` VARCHAR(255) NOT NULL ,
+  `body` TEXT NOT NULL ,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+
+
+
+
