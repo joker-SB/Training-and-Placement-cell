@@ -51,7 +51,7 @@ CREATE TABLE `profile`.`post`(
 
 #create table named as recruiter to register recruiters with the company name
 
-CREATE TABLE `id8954325_profile`.`recruiter` (
+CREATE TABLE `profile`.`recruiter` (
   `id` INT(5) NOT NULL AUTO_INCREMENT , 
   `username` VARCHAR(255) NOT NULL ,
   `email` VARCHAR(255) NOT NULL ,
@@ -65,12 +65,23 @@ CREATE TABLE `id8954325_profile`.`recruiter` (
 #create table named as recruiterprofile  to store the profile of recruiters so that when a recruiter login with his
 userid and password we can display his profile also on the home page
 
-CREATE TABLE `id8954325_profile`.`recruiterprofile` (
+CREATE TABLE `profile`.`recruiterprofile` (
   `id` INT(5) NOT NULL AUTO_INCREMENT ,
   `username` VARCHAR(255) NOT NULL ,
   `companyname` VARCHAR(255) NOT NULL ,
   `contactnumber` VARCHAR(13) NOT NULL ,
   `image` VARCHAR(255) NOT NULL ,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+
+#create table named as register to register  the students
+
+CREATE TABLE `profile`.`register` (
+  `id` INT(5) NOT NULL AUTO_INCREMENT ,
+  `username` VARCHAR(255) NOT NULL ,
+  `email` VARCHAR(255) NOT NULL ,
+  `password` VARCHAR(32) NOT NULL ,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
