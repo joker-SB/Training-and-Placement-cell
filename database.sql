@@ -49,6 +49,15 @@ CREATE TABLE `profile`.`post`(
 ) ENGINE = InnoDB;
 
 
+#create table named as recruiter to register recruiters with the company name
 
+CREATE TABLE `id8954325_profile`.`recruiter` (
+  `id` INT(5) NOT NULL AUTO_INCREMENT , 
+  `username` VARCHAR(255) NOT NULL ,
+  `email` VARCHAR(255) NOT NULL ,
+  `companyname` VARCHAR(255) NOT NULL ,
+  `password` VARCHAR(255) NOT NULL ,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
 
 
