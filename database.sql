@@ -97,4 +97,17 @@ CREATE TABLE `profile`.`userprofile` (
 ) ENGINE = InnoDB;
 
 
+#create a tabled named as job_apply to store the detail of the person who applied for the job
+CREATE TABLE `profile`.`job_apply` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `job_id` INT(11) NOT NULL ,
+  `companyname` VARCHAR(255) NOT NULL ,
+  `username` VARCHAR(255) NOT NULL , 
+  `status` VARCHAR(255) NOT NULL ,
+  `applied_on` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+
+
 
