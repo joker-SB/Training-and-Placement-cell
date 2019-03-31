@@ -15,13 +15,15 @@ CREATE TABLE `profile`.`admin` (
 #create table named as jobpost to store job posts created  by recruiters 
 
 CREATE TABLE `profile`.`jobpost` (
-  `id` INT(5) NOT NULL AUTO_INCREMENT ,
+  `job_id` INT(11) NOT NULL AUTO_INCREMENT ,
   `username` VARCHAR(255) NOT NULL ,
-  `companyname` VARCHAR(255) NOT NULL ,
-  `title` VARCHAR(255) NOT NULL ,
-  `body` TEXT NOT NULL ,
+  `companyname` VARCHAR(255) NOT NULL , 
+  `title` VARCHAR(255) NOT NULL , `body` 
+  TEXT NOT NULL , `job_tag` VARCHAR(255) NOT NULL ,
+  `job_available` INT(11) NOT NULL ,
+  `applicants_applied` INT(11) NOT NULL ,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`job_id`)
 ) ENGINE = InnoDB;
 
 
