@@ -35,7 +35,7 @@ CREATE TABLE `profile`.`poregister`(
 ) ENGINE = InnoDB;
 
 
-#create table post to store all the post posted by students and placement officers,but we retrive the as
+#create table post to store all the post posted by students and placement officers,but we retrive them as
 a seperate post using some logics in sql code
 
 CREATE TABLE `profile`.`post`( 
