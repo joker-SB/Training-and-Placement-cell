@@ -1,5 +1,6 @@
 
 <?php
+//student home page
  session_start(); 
  
  $db = mysqli_connect('localhost', 'root', '', 'profile');
@@ -44,13 +45,22 @@
         $length=count($array);		
     }
 
-if(isset($_SESSION['username'])){
+/*if(isset($_SESSION['username'])){
 	$username=$_SESSION['username'];
 	$sql="select * from post where username='$username'";
 	$result=$db->query($sql);
 	$rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
 	
-}	
+}*/	
+
+if(isset($_SESSION['username'])){
+	$username=$_SESSION['username'];
+	$sql="select * from job_apply where applicant_name='$username'";
+	$result=$db->query($sql);
+	$rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
+	
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -112,7 +122,7 @@ if(isset($_SESSION['username'])){
 					</a></li>
 					
 					<li><a href="updateprofile.php">update profile</a></li>
-						<li><a href="changeprofilepic">change profilePic</a></li>
+						<li><a href="changeprofilepic.php">change profilePic</a></li>
 					   
 					
 				  </ul>  
@@ -131,11 +141,24 @@ if(isset($_SESSION['username'])){
 								<li>
 								  <a href="post.php">Create Post</a>
 								</li>
+								<li>
+								  <a href="viewpost.php">View Post</a>
+								</li>
 								 <li>
 								  <a href="changepassword.php">Change Password </a>
 								  </li>
 								<li>
-								  <a href="home.php?logout='1'" style="color: red;">logout</a>
+								 <li>
+								  <a href="jobpost.php">Apply for jobs </a>
+								  </li>
+								  <li>
+								  <a href="upload_resume.php">Upload Resume </a>
+								  </li>
+								  <li>
+								  <a href="view_resume.php">view Resume </a>
+								  </li>
+								<li>
+								  <a href="home.php?logout=1" style="color: red;">logout</a>
 								 </li>
 								  
 							  </ul>  
@@ -143,17 +166,43 @@ if(isset($_SESSION['username'])){
 						  </div>
 						</div>
 						
-			          <?php foreach($rows as $row):?> 
-						   <div class="templatemo-content-widget white-bg col-1">
+			          <?php// foreach($rows as $row):?> 
+						   <!--div class="templatemo-content-widget white-bg col-1"-->
 								
-							  <h2><?php echo($row['title']);?></h2>
-							  <p><?php echo($row['body']);?></p>
-							  <button name="readmore" value="Read More"><a href="readmorepost.php?id=<?php echo($row['id']);?>">Read more</a></button>
-						   </div>
-					    <?php endforeach;?>
+							  <h2><?php// echo($row['title']);?></h2>
+							  <p><?php// echo($row['body']);?></p>
+							  <!--button name="readmore" value="Read More"--><!--a href="readmorepost.php?id=<?php //echo($row['id']);?>"-->
+						   <!--/div-->
+					    <?php //endforeach;?>
 					  
-	            </div>
+	           
+				
+				<div class="templatemo-content-widget white-bg col-1">
+				    <div class="container">
+					      <h2><center>Job Applied</center></h2>
+						  <table class="table table-hover table-bordered table-sm">
+							<thead>
+							  <tr>
+								<th>Company</th>
+								<th>Applied On</th>
+								<th>Status</th>
+								
+							  </tr>
+							</thead>
+							<tbody>
+							<?php foreach($rows as $row):?>
+							  <tr>
+								<td><?php echo($row['companyname']);?></td>
+								<td><?php echo($row['applied_on']);?></td>
+								<td><?php echo($row['status']);?></td>
+							  </tr>
+							 <?php endforeach;?>
+							</tbody>
+						  </table>					 
+					</div>	
+				</div>	
       
+	        </div>
         </div>
 	  <!-- JS -->
     <script src="js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
