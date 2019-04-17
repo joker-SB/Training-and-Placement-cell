@@ -1,6 +1,8 @@
 
+
 <?php
  session_start(); 
+ //recruiter home page
  
  $db = mysqli_connect('localhost', 'root', '', 'profile');
  
@@ -113,7 +115,8 @@
 								
 							  <h2><?php echo($row['title']);?></h2>
 							  <p><?php echo($row['body']);?></p>
-							  <button name="readmore" value="Read More"><a href="readmorepost.php?id=<?php echo($row['id']);?>">Read more</a></button>
+							  <button name="readmore" value="Read More"><a href="readmorepost.php?id=<?php echo($row['job_id']);?>">Read more</a></button>
+							  <button name="applicants" value="applicants"><a href="applicants.php?id=<?php echo($row['job_id']);?>">See Applicants</a></button>
 						   </div>
 					    <?php endforeach;?>
 					  
